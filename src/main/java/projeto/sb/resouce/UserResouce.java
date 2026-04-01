@@ -1,4 +1,4 @@
-package projeto.sb.resource;
+package projeto.sb.resouce;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
