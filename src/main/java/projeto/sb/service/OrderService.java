@@ -6,21 +6,21 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import projeto.sb.entities.User;
-import projeto.sb.repository.UserRepository;
+import projeto.sb.entities.Order;
+import projeto.sb.repository.OrderRepository;
 
 @Service
-public class UserService {
+public class OrderService {
 	
 	@Autowired
-	private UserRepository repository;
+	private OrderRepository repository;
 	
-	public List<User> findAll() {
+	public List<Order> findAll() {
 		return repository.findAll();
 	}
 	
-	public User findById(Long Id) {
-		Optional<User> obj = repository.findById(Id); 
+	public Order findById(Long Id) {
+		Optional<Order> obj = repository.findById(Id); 
 		return obj.orElseThrow(()-> new RuntimeException("usuario nao encontrado."));
 	}
 }
