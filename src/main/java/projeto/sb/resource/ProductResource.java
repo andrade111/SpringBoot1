@@ -13,7 +13,7 @@ import projeto.sb.entities.Product;
 import projeto.sb.service.ProductService;
 
 @RestController
-@RequestMapping(value = "/categories")
+@RequestMapping(value = "/products")
 public class ProductResource {
 	
 	@Autowired
