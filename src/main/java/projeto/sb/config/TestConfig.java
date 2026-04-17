@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Profile;
 
 import projeto.sb.entities.Category;
 import projeto.sb.entities.Order;
+import projeto.sb.entities.Payment;
 import projeto.sb.entities.Product;
 import projeto.sb.entities.User;
 import projeto.sb.entities.enums.OrderStatus;
@@ -59,6 +60,11 @@ public class TestConfig implements CommandLineRunner{
 		
 		userRepository.saveAll(Arrays.asList(u1, u2));
 		orderRepository.saveAll(Arrays.asList(o1, o2));
+		
+		Payment pay1 = new Payment(null, Instant.parse("2019-06-20T20:23:07Z"), o1);
+		o1.setPayment(pay1);
+		
+		orderRepository.save(o1);
 	}
 	
 	
